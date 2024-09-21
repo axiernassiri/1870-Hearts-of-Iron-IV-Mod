@@ -30,7 +30,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 10896
 		}
-		location = 10
+		location = 10896
 		division_template = "Militia-Division"
 		start_experience_factor = 0.1
 	}

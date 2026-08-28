@@ -36,6 +36,6 @@ tags={
 	"Technologies"
 	"Gameplay"
 }
-name="La Belle Epoque"
 supported_version="1.16.*"
-remote_file_id="3268912955"
+remote_file_id="3268912955"name="La Belle Epoque Redux"
+supported_version="1.19.2.0"

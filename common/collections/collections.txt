@@ -1,0 +1,28 @@
+world_at_peace_countries = {
+	input = game:all_countries
+	operators = {
+		limit = {
+			has_war = no
+		}
+	}
+	name = COLLECTION_COUNTRIES_AT_PEACE
+}
+states_on_my_continent = {
+	input = game:all_states
+	operators = {
+		limit = {
+			is_on_same_continent_as = ROOT
+		}
+	}
+	name = COLLECTION_STATES_MY_CONTINENT
+}
+faction_states_on_my_continent = {
+	input = game:all_states
+	operators = {
+		limit = {
+			is_on_same_continent_as = ROOT
+			is_controlled_by_ROOT_or_ally = yes
+		}
+	}
+	name = COLLECTION_FACTION_STATES_MY_CONTINENT
+}

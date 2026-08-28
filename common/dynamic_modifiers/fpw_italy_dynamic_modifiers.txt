@@ -1,9 +1,9 @@
-fpw_ITA_disorganised_army = { 
+fpw_ITA_disorganised_army = {
 	enable = { always = yes }
 
-    icon = GFX_idea_tur_disorganised_armed_forces
+	icon = GFX_idea_tur_disorganised_armed_forces
 
-    dig_in_speed_factor = ITA_dig_in_speed_factor
+	dig_in_speed_factor = ITA_dig_in_speed_factor
 	army_attack_factor = ITA_army_attack_factor
 	army_org_factor = ITA_army_org_factor
 	army_speed_factor = ITA_army_speed_factor

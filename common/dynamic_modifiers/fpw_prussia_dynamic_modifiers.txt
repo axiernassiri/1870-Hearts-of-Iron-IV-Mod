@@ -1,14 +1,14 @@
 fpw_PRS_victor_of_the_brothers_war = {
 	enable = { always = yes }
 	icon = GFX_idea_prs_victor_of_1866
-	
+
 	custom_modifier_tooltip = prestige_modifier_victor_of_the_brothers_war
 }
 
 fpw_PRS_heil_dir_im_siegerkranz = {
 	enable = { always = yes }
 	icon = GFX_idea_prs_victor_of_1871
-	
+
 	custom_modifier_tooltip = prestige_victor_of_1871
 }
 
@@ -35,7 +35,7 @@ fpw_PRS_wilhelms_legitimacy = {
 	stability_factor = fpw_PRS_wilhelms_legitimacy_stability
 	drift_defence_factor = fpw_PRS_wilhelms_legitimacy_drift_defence_factor
 	political_power_gain = fpw_PRS_wilhelms_legitimacy_political_power_gain
-}	
+}
 
 fpw_popular_front = {
 	enable = { always = yes }
@@ -50,7 +50,7 @@ fpw_popular_front = {
 
 fpw_liberal_front = {
 	enable = { always = yes }
-	icon = GFX_idea_liberal_front 
+	icon = GFX_idea_liberal_front
 
 	fascism_drift = prs_bop_fascism_drift
 	communism_drift = prs_bop_communism_drift
@@ -60,7 +60,7 @@ fpw_liberal_front = {
 
 fpw_socialist_front = {
 	enable = { always = yes }
-	icon = GFX_idea_socialist_front 
+	icon = GFX_idea_socialist_front
 
 	fascism_drift = prs_bop_fascism_drift
 	communism_drift = prs_bop_communism_drift
@@ -86,7 +86,6 @@ fpw_PRS_prussian_industrialization = {
 	fuel_gain_factor = prs_oil_gain_factor
 	max_fuel_factor = prs_max_fuel_factor
 	production_lack_of_resource_penalty_factor = prs_lack_of_resource_penatly_factor
-	
+
 
 }
-

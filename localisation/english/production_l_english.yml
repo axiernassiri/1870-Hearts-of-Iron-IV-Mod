@@ -50,6 +50,7 @@
  PRODUCTION_MATERIALS_WOOD:0 "Wood"
  PRODUCTION_MATERIALS_STEEL:0 "Steel"
  PRODUCTION_MATERIALS_TUNGSTEN:0 "Tungsten"
+ PRODUCTION_MATERIALS_COAL: "Coal"
  PRODUCTION_MATERIAL_VAL:0 "$VALUE|0H$"
  PRODUCTION_VEHICLES_BUTTON:0 "Build Armored Vehicles"
  PRODUCTION_VEHICLES_BUTTON_DISABLED:0 "Armored Vehicles are §RNot invented§!!"
@@ -221,8 +222,8 @@
  PRODUCTION_FILTER_RIGHTCLICK:0 "\n§GRight Click§! to toggle collapsing all of this category."
  PRODUCTION_FILTER_ARMS_FACTORIES:0 "Military Factories used"
  PRODUCTION_FILTER_DOCKYARDS:0 "Naval Dockyards used"
- 
- 
+
+
  INTEL_CIVILIAN_FACTORIES_USED_ON_TRADE:0 "Estimated Civilian Factories used on trade"
  INTEL_ARMS_FACTORIES_USED_ON_EQUIPMENT:0 "Estimated Military Factories used on military equipments"
  INTEL_ARMS_FACTORIES_USED_ON_ARMOR:0 "Estimated Military Factories used on armored vehicles"
@@ -230,8 +231,8 @@
  INTEL_DOCKYARDS_USED_ON_CAPITAL:0 "Estimated Naval Dockyards used capital ships"
  INTEL_DOCKYARDS_USED_ON_SCREEN:0 "Estimated Naval Dockyards used screen ships"
  INTEL_DOCKYARDS_USED_ON_OTHER:0 "Estimated Naval Dockyards used other ships"
- 
- 
+
+
  PRODUCTION_DRAG_N_DROP:0 "§GDrag and drop§! to change the §Ypriority§!."
  PRODUCTION_COLLAPSE:2 "§GClick§! to collapse.\n§GCtrl + Click§! to collapse all of this category.\n§GShift + Click§! to collapse all Production Lines."
  PRODUCTION_EXPAND:2 "§GClick§! to expand.\n§GCtrl + Click§! to expand all of this category.\n§GShift + Click§! to expand all Production Lines."
@@ -309,4 +310,11 @@
  BONUS_PRODUCTION_RESOURCE_NEED_FACTOR: "Production resource need"
  BONUS_PRODUCTION_RESOURCE_PENALTY_FACTOR: "Production resource penalty"
  BONUS_PRODUCTION_CONVERSION_SPEED_FACTOR: "Production conversion speed"
- 
+
+ PRODUCTION_UNKNOWN_ENERGY_AMOUNT: "?"
+ PRODUCTION_NO_INTEL_ON_POWER: "We have no intel on power usage in this state."
+ PRODUCTION_STATE_ENERGY_EFFICIENCY: "Energy Efficiency: $VALUE|H$"
+ PRODUCTION_STATE_ENERGY_USAGE_FACTORIES: "Factory Energy Usage: $VALUE|H$"
+ PRODUCTION_STATE_ENERGY_USAGE_MILITARY_FACTORIES: "  £mil_factory Military Factory Energy Usage: $VALUE|H$"
+ PRODUCTION_STATE_ENERGY_USAGE_NAVAL_DOCKYARDS: "  £nav_dockyard_texticon Naval Dockyard Energy Usage: $VALUE|H$"
+ PRODUCTION_STATE_ENERGY_USAGE_CIVILIAN_FACTORIES: "  £civ_factory Civilian Factory Energy Usage: $VALUE|H$"

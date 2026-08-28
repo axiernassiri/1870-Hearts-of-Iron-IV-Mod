@@ -1,15 +1,15 @@
 fpw_SOV_losers_of_the_crimean_war = {
 	enable = { always = yes }
 	icon = GFX_idea_wip
-	
+
 	custom_modifier_tooltip = prestige_modifier_losers_of_the_crimean_war
 }
 
 SOV_serfdom_remnants_dynamic_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	
+
 	icon = GFX_idea_generic_agrarian_society
-	
+
 	consumer_goods_factor = SOV_sr_consumer_goods_factor
 	global_building_slots_factor = SOV_sr_global_building_slots_factor
 	production_factory_max_efficiency_factor = SOV_sr_production_factory_max_efficiency_factor
@@ -18,15 +18,15 @@ SOV_serfdom_remnants_dynamic_modifier = { #NATIONAL SPIRIT
 	local_resources_factor = SOV_sr_local_resources_factor
 	production_speed_buildings_factor = SOV_sr_production_speed_buildings_factor
 	research_speed_factor = SOV_sr_research_speed_factor
-	
-	
-	
+
+
+
 }
 SOV_peasant_relief_program_dynamic_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	
+
 	icon = GFX_idea_generic_agrarian_society
-	
+
 	consumer_goods_factor = SOV_sr_consumer_goods_factor
 	global_building_slots_factor = SOV_sr_global_building_slots_factor
 	production_factory_max_efficiency_factor = SOV_sr_production_factory_max_efficiency_factor
@@ -35,30 +35,30 @@ SOV_peasant_relief_program_dynamic_modifier = { #NATIONAL SPIRIT
 	local_resources_factor = SOV_sr_local_resources_factor
 	production_speed_buildings_factor = SOV_sr_production_speed_buildings_factor
 	research_speed_factor = SOV_sr_research_speed_factor
-	
-	
-	
+
+
+
 }
 
 SOV_russian_army_dynamic_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	
+
 	icon = GFX_idea_MEX_politicised_army
-	
+
 	experience_gain_army_factor = SOV_ra_experience_gain_army_factor
 	army_attack_factor = SOV_ra_army_attack_factor
 	army_defence_factor = SOV_ra_army_defence_factor
 	command_power_gain = SOV_ra_command_power_gain
-	
-	
-	
+
+
+
 }
 
 SOV_first_constitution_dynamic_modifier = { #NATIONAL SPIRIT
 	enable = { always = yes }
-	
+
 	icon = GFX_idea_generic_constitutional_guarantees
-	
+
 	political_power_gain = SOV_fc_political_power_gain
 	stability_factor = SOV_fc_stability_factor
 	war_support_factor = SOV_fc_war_support_factor
@@ -68,7 +68,7 @@ SOV_first_constitution_dynamic_modifier = { #NATIONAL SPIRIT
 	neutrality_drift = SOV_fc_neutrality_drift
 	democratic_drift = SOV_fc_democratic_drift
 	fascism_drift = SOV_fc_fascism_drift
-	
-	
-	
+
+
+
 }

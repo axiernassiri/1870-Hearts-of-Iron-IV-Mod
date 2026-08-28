@@ -1,0 +1,17 @@
+faction_template_generic = {
+	manifest = faction_manifest_generic
+	can_leader_join_other_factions = yes
+	visible = { always = no }
+	available = { always = no }
+	goals = {}
+	default_rules = { change_leader_rule_influence }
+}
+faction_template_regional = {
+	name = regional_faction
+	manifest = faction_manifest_generic
+	icon = GFX_faction_logo_generic
+	can_leader_join_other_factions = yes
+	visible = { always = yes }
+	goals = {}
+	default_rules = { change_leader_rule_influence }
+}

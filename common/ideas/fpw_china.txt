@@ -1,189 +1,189 @@
 ideas = {
-    country = {
-        fpw_CHI_widespread_corruption = {
-            allowed = {
+	country = {
+		fpw_CHI_widespread_corruption = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = generic_disjointed_gov
+			picture = generic_disjointed_gov
 
-            removal_cost = -1
-            modifier = {
-                political_power_cost = 0.5
-                stability_factor = -0.2
-                consumer_goods_factor = 0.5
-                research_speed_factor = -0.2
-            }
-        }
-        
-        fpw_CHI_ineffective_bannermen = {
-            allowed = {
-				original_tag = CHI
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.5
+				stability_factor = -0.2
+				consumer_goods_factor = 0.5
+				research_speed_factor = -0.2
 			}
+		}
 
-			available = {
-			}
-            
-            picture = chi_army_corruption
-            
-            removal_cost = -1
-            modifier = {
-                army_speed_factor = -0.15
-                army_attack_factor = -0.2
-                army_defence_factor = -0.2
-                army_org_factor = -0.3
-                experience_gain_army = -0.15
-            }
-        }
-        fpw_CHI_century_of_humiliation = {
-            allowed = {
-				original_tag = CHI
-			}
-
-			available = {
-			}
-            
-            picture = man_low_legitimacy
-            
-            removal_cost = -1
-            modifier = {
-                surrender_limit = -0.25
-                stability_weekly = -0.002
-                war_support_weekly = -0.002
-            }
-        }
-        fpw_CHI_disjointed_naval_vessels = {
-            allowed = {
-				original_tag = CHI
-			}
-
-			available = {
-			}
-            
-            picture = hol_de_vaarplicht
-            
-            removal_cost = -1
-            modifier = {
-                naval_coordination = -0.2
-                naval_morale_factor = -0.2
-                navy_org_factor = -0.3
-                positioning = -0.1
-            }
-        }
-        fpw_CHI_ongoing_famine1 = {
-            allowed = {
+		fpw_CHI_ineffective_bannermen = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = ENG_the_war_to_end_all_wars
+			picture = chi_army_corruption
 
-            removal_cost = -1
-            modifier = {
-                stability_factor = -0.2
-                monthly_population = -0.55
-                war_support_factor = -0.2
-                supply_factor = -0.1
-                attrition = 0.08
-            }
-        }
-        fpw_CHI_ongoing_famine2 = {
-            allowed = {
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = -0.15
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				army_org_factor = -0.3
+				experience_gain_army = -0.15
+			}
+		}
+		fpw_CHI_century_of_humiliation = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = ENG_the_war_to_end_all_wars
+			picture = man_low_legitimacy
 
-            removal_cost = -1
-            modifier = {
-                stability_factor = -0.1
-                monthly_population = -0.55
-                war_support_factor = -0.1
-                supply_factor = -0.075
-                attrition = 0.05
-            }
-        }
-        fpw_CHI_self_strengthening_movement1 = {
-            allowed = {
+			removal_cost = -1
+			modifier = {
+				surrender_limit = -0.25
+				stability_weekly = -0.002
+				war_support_weekly = -0.002
+			}
+		}
+		fpw_CHI_disjointed_naval_vessels = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = chi_chinese_support
+			picture = hol_de_vaarplicht
 
-            removal_cost = -1
-            modifier = {
-                stability_factor = 0.05
-                research_speed_factor = 0.05
-                industrial_capacity_factory = 0.025
-                industrial_capacity_dockyard = 0.025
-            }
-        }
-        fpw_CHI_self_strengthening_movement2 = {
-            allowed = {
+			removal_cost = -1
+			modifier = {
+				naval_coordination = -0.2
+				naval_morale_factor = -0.2
+				navy_org_factor = -0.3
+				positioning = -0.1
+			}
+		}
+		fpw_CHI_ongoing_famine1 = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = chi_chinese_support
+			picture = ENG_the_war_to_end_all_wars
 
-            removal_cost = -1
-            modifier = {
-                stability_factor = 0.05
-                research_speed_factor = 0.075
-                industrial_capacity_factory = 0.05
-                industrial_capacity_dockyard = 0.05
-            }
-        }
-        fpw_CHI_anti_transmission_measures = {
-            allowed = {
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.2
+				monthly_population = -0.55
+				war_support_factor = -0.2
+				supply_consumption_factor = -0.1
+				attrition = 0.08
+			}
+		}
+		fpw_CHI_ongoing_famine2 = {
+			allowed = {
 				original_tag = CHI
 			}
 
 			available = {
 			}
 
-            picture = generic_neutrality_drift_bonus
+			picture = ENG_the_war_to_end_all_wars
 
-            removal_cost = -1
-            modifier = {
-                stability_weekly = 0.004
-            }
-        }
-    }
-	
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = -0.55
+				war_support_factor = -0.1
+				supply_consumption_factor = -0.075
+				attrition = 0.05
+			}
+		}
+		fpw_CHI_self_strengthening_movement1 = {
+			allowed = {
+				original_tag = CHI
+			}
+
+			available = {
+			}
+
+			picture = chi_chinese_support
+
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+			}
+		}
+		fpw_CHI_self_strengthening_movement2 = {
+			allowed = {
+				original_tag = CHI
+			}
+
+			available = {
+			}
+
+			picture = chi_chinese_support
+
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				research_speed_factor = 0.075
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		fpw_CHI_anti_transmission_measures = {
+			allowed = {
+				original_tag = CHI
+			}
+
+			available = {
+			}
+
+			picture = generic_neutrality_drift_bonus
+
+			removal_cost = -1
+			modifier = {
+				stability_weekly = 0.004
+			}
+		}
+	}
+
 	hidden_ideas = {
-	
+
 		fpw_tongzhi = {
 			allowed = {
-			original_tag = CHI	
+			original_tag = CHI
 			}
 
 			on_add = {
-                set_country_flag = fpw_secondary_leader_chi_tongzhi
-            }
+				set_country_flag = fpw_secondary_leader_chi_tongzhi
+			}
 			on_remove = {
 				clr_country_flag = fpw_secondary_leader_chi_tongzhi
-            }
+			}
 
 			removal_cost = -1
 
 			modifier = {
-			
+
 			}
 		}
 	}
-	
+
 }

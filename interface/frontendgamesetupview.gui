@@ -125,7 +125,7 @@ guiTypes = {
 	### country entry
 	containerWindowType = {
 		name = "country_entry"
-			
+
 		buttonType = {
 			name = "country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
@@ -133,22 +133,29 @@ guiTypes = {
 			scale=0.75
 			clicksound = click_checkbox
 		}
-	
+
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_shield_medium"
 			position = { x = 484 y = 181 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
-		}		
-	
+		}
+
 		buttonType = {
-			name = "country"	
+			name = "country"
 			quadTextureSprite = "GFX_country_selection_entry"
 			position = { x=450 y =-5 }
 			clicksound = click_checkbox
-		}		
-		
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 110 y = 180 }
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
+		}
+
 		instantTextBoxType = {
 			name = "country_name"
 			position = { x = 461 y = 242 }
@@ -156,17 +163,17 @@ guiTypes = {
 			borderSize = {x = 0 y = 0}
 			maxWidth = 131
 			maxHeight = 20
-			fixedsize = yes	
-			format = center		
+			fixedsize = yes
+			format = center
 			Orientation = "UPPER_LEFT"
 		}
 	}
-	
+
 	### country entry
 	containerWindowType = {
 		name = "country_entry_medium"
-				
-			
+
+
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_shield_medium"
@@ -174,19 +181,26 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
-		
+
 		buttonType = {
-			name = "country"	
+			name = "country"
 			quadTextureSprite = "GFX_country_selection_minor_entry"
 			position = { x=0 y =0 }
 			clicksound = click_checkbox
-		}		
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 100 y = 15 }
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
+		}
 	}
-	
+
 	### country entry
 	containerWindowType = {
 		name = "country_entry_mini"
-	
+
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_flag_small2"
@@ -196,13 +210,34 @@ guiTypes = {
 		}
 
 		buttonType = {
-			name = "country"	
+			name = "country"
 			quadTextureSprite = "GFX_mini_country_selector"
 			position = { x=0 y =0 }
 			clicksound = click_checkbox
-		}		
+		}
+
+		iconType = {
+			name = "new_content"
+			position = { x = 42 y = 0 }
+			spriteType = "GFX_unplayed_content_notification"
+			alwaystransparent = yes
+		}
 	}
 
+	containerWindowType = {
+		name = "country_filter"
+		size = { width = 149 height = 33 }
+
+		buttonType = {
+			name = "button"
+			quadTextureSprite = "GFX_country_filter_entry"
+			buttonText = "FILTER"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			oversound = ui_menu_over
+			frame = 2
+		}
+	}
 
 	### LOAD GAME
 	containerWindowType = {
@@ -243,7 +278,7 @@ guiTypes = {
 
 		checkboxType = {
 			name = "localgames_tab"
-			position = { x = 30  y = 84 }
+			position = { x = 30 y = 84 }
 			quadTextureSprite ="GFX_save_load_file_btn"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_checkbox
@@ -391,7 +426,7 @@ guiTypes = {
 
 		checkboxType = {
 			name = "localgames_tab"
-			position = { x = 105  y = 124 }
+			position = { x = 105 y = 124 }
 			quadTextureSprite ="GFX_save_load_file_btn"
 			Orientation = "UPPER_LEFT"
 		}
@@ -470,7 +505,7 @@ guiTypes = {
 			position = { x = 115 y = 485 }
 			name = "game_name"
 			font = "hoi_16mbs"
-			borderSize = { x = 4 y = 8  }
+			borderSize = { x = 4 y = 8 }
 			size = { x=262 y=42 }
 			text = ""
 			orientation = "UPPER_LEFT"

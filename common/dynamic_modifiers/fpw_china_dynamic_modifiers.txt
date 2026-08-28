@@ -1,7 +1,7 @@
 fpw_CHI_divided_country = {
 	enable = { always = yes }
 	icon = GFX_idea_wip
-	
+
 	conscription_factor = -0.05
 	industrial_capacity_factory = -0.05
 

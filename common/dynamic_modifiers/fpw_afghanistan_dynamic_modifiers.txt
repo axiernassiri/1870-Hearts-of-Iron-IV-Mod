@@ -16,7 +16,7 @@ fpw_AFG_afghan_modernized_economy = {
 	fuel_gain_factor = prs_oil_gain_factor
 	max_fuel_factor = prs_max_fuel_factor
 	production_lack_of_resource_penalty_factor = afg_lack_of_resource_penatly_factor
-	
+
 
 }
 fpw_AFG_afghan_agricultural_economy = {
@@ -37,7 +37,7 @@ fpw_AFG_afghan_agricultural_economy = {
 	fuel_gain_factor = prs_oil_gain_factor
 	max_fuel_factor = prs_max_fuel_factor
 	production_lack_of_resource_penalty_factor = afg_lack_of_resource_penatly_factor
-	
+
 
 }
 fpw_AFG_radical_elements_incouraged = {
@@ -55,12 +55,12 @@ fpw_AFG_pakistani_resistance = {
 	icon = GFX_afg_wip
 
 	army_attack_factor = 0.25
-	
+
 }
 fpw_AFG_central_asian_nationalism = {
 	enable = { always = yes }
 	icon = GFX_afg_wip
 
 	army_attack_factor = 0.25
-	
+
 }

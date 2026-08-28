@@ -1,0 +1,34 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				if = {
+					limit = { has_state_category = megalopolis } #12
+					add_resource = { type = coal amount = 4 }
+				}
+				else_if = {
+					limit = { has_state_category = metropolis } #10
+					add_resource = { type = coal amount = 3 }
+				}
+				else_if = {
+					limit = {
+						or = {
+							has_state_category = large_city #8
+							has_state_category = city #6
+						}
+					}
+					add_resource = { type = coal amount = 2 }
+				}
+				else_if = {
+					limit = {
+						or = {
+							has_state_category = large_town #5
+							has_state_category = town #4
+						}
+					}
+					add_resource = { type = coal amount = 1 }
+				}
+			}
+		}
+	}
+}

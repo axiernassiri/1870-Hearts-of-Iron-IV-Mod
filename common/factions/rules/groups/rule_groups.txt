@@ -1,0 +1,5 @@
+INFLUENCE_SORT = {
+	rules = {
+		change_leader_rule_influence
+	}
+}

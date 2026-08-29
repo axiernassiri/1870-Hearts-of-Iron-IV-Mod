@@ -17,6 +17,7 @@
 
 	focus = {
 		id = AUS_austria_in_despair
+		icon = GFX_focus_generic_total_war
 		x = 8
 		y = 0
 		cost = 2
@@ -171,6 +172,7 @@
 
 	focus = {
 		id = AUS_seek_french_support
+		icon = GFX_focus_chi_reach_out_to_france
 		x = 2
 		y = 1
 		relative_position_id = AUS_status_of_confed
@@ -525,7 +527,7 @@
 		id = AUS_reform_the_army
 		icon = GFX_focus_generic_army_doctrines_2
 		x = -2
-		y = 2
+		y = 1
 		relative_position_id = AUS_great_humiliation
 		prerequisite = { focus = AUS_great_humiliation }
 		cost = 5
@@ -545,7 +547,7 @@
 		id = AUS_military_crackdowns
 		icon = GFX_focus_generic_army_doctrines_2
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = AUS_reform_the_army
 		prerequisite = { focus = AUS_reform_the_army }
 		cost = 5
@@ -622,7 +624,7 @@
 	focus = {
 		id = AUS_setting_a_new_course
 		icon = GFX_focus_generic_support_the_left_right
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = AUS_push_for_reforms
 		prerequisite = { focus = AUS_military_crackdowns }
@@ -638,101 +640,14 @@
 	}
 	
 	
-	focus = {
-		id = AUS_austria_indivisible
-		icon = GFX_focus_AUS_proclaim_austrian_empire
-		x = -4
-		y = 2
-		relative_position_id = AUS_setting_a_new_course
-		prerequisite = { focus = AUS_setting_a_new_course }
-		mutually_exclusive = { focus = AUS_the_ausgleich }
-		mutually_exclusive = { focus = AUS_multiethnic_empire }
-		cost = 10
-		available = { 
-			custom_trigger_tooltip = {
-				tooltip = AUS_hungary_loyal_triger_tt
-				has_idea = AUS_hungary_loyal
-			}
-			custom_trigger_tooltip = {
-				tooltip = AUS_czech_loyal_triger_tt
-				has_idea = AUS_czech_loyal
-			}
-			custom_trigger_tooltip = {
-				tooltip = AUS_galicia_loyal_triger_tt
-				has_idea = AUS_galicia_loyal
-			}
-			custom_trigger_tooltip = {
-				tooltip = AUS_illyria_loyal_triger_tt
-				has_idea = AUS_illyria_loyal
-			}
-		}
-		completion_reward = {
-			add_political_power = 100
-			#add_stability = -0.10
-			AUS_decrese_hungarian_attitude_effect = yes
-			AUS_decrese_czech_attitude_effect = yes
-			AUS_decrese_galician_attitude_effect = yes
-			AUS_decrese_illyrian_attitude_effect = yes
-		}
-	}
-	focus = {
-		id = AUS_reintegrate_bohemia
-		icon = GFX_focus_generic_befriend_czechoslovakia
-		x = 2
-		y = 1
-		relative_position_id = AUS_austria_indivisible
-		prerequisite = { focus = AUS_austria_indivisible focus = AUS_the_ausgleich }
-		cost = 5
-		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = AUS_czech_loyal_triger_tt
-					has_idea = AUS_czech_loyal
-				}
-				custom_trigger_tooltip = {
-					tooltip = AUS_czech_hostile_triger_tt
-					has_idea = AUS_czech_hostile
-				}
-			}
-		}
-		completion_reward = {
-			IF = {
-				limit = {
-					has_idea = AUS_czech_loyal
-				}
-				every_owned_state = {
-					limit = {
-						is_core_of = CZE
-					}
-					add_core_of = AUS
-				}
-				add_stability = 0.10
-				AUS_decrese_czech_attitude_effect = yes
-			}
-			ELSE_IF = {
-				limit = {
-					has_idea = AUS_czech_hostile
-				}
-				every_owned_state = {
-					limit = {
-						is_core_of = CZE
-					}
-					add_core_of = AUS
-				}
-				add_stability = -0.10
-			}
-		}
-	}
-	
 	
 	focus = {
 		id = AUS_the_ausgleich
 		icon = GFX_AUS_ausgleish 
-		x = 0
+		x = -2
 		y = 2
 		relative_position_id = AUS_setting_a_new_course
 		prerequisite = { focus = AUS_setting_a_new_course }
-		mutually_exclusive = { focus = AUS_austria_indivisible }
 		mutually_exclusive = { focus = AUS_multiethnic_empire }
 		cost = 10
 		available = {
@@ -793,15 +708,143 @@
 			}
 		}
 	}
+
+	focus = {
+		id = AUS_december_constition
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = AUS_crown_of_hungary
+		prerequisite = { focus = AUS_crown_of_hungary }
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			# add political power and stability
+		}
+	}
+
+	focus = {
+		id = AUS_common_minstries
+		icon = GFX_focus_generic_improve_the_administration
+		x = -3
+		y = 1
+		relative_position_id = AUS_december_constition
+		prerequisite = { focus = AUS_december_constition }
+		cost = 5
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = AUS_common_army
+		icon = GFX_focus_generic_diverse_army
+		x = 3
+		y = 1
+		relative_position_id = AUS_december_constition
+		prerequisite = { focus = AUS_december_constition }
+		cost = 5
+		available = {
+			has_political_power > 50
+		}
+		completion_reward = {
+			add_political_power = -50
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = AUS_strength_the_reichsrat
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = 0
+		y = 1
+		relative_position_id = AUS_december_constition
+		prerequisite = { focus = AUS_december_constition }
+		cost = 5
+		available = {
+			has_political_power > 50
+		}
+		completion_reward = {
+			add_political_power = -50
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = AUS_the_duel_monarchy
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		x = 0
+		y = 2
+		relative_position_id = AUS_december_constition
+		prerequisite = { focus = AUS_strength_the_reichsrat }
+		prerequisite = { focus = AUS_common_army }
+		prerequisite = { focus = AUS_common_minstries }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			add_ideas = fpw_idea_the_duel_monarchy
+		}
+	}
+
+	focus = {
+		id = AUS_the_balkan_theatre
+		icon = GFX_focus_generic_balkan_diplomacy
+		x = -5
+		y = 1
+		relative_position_id = AUS_the_duel_monarchy
+		prerequisite = { focus = AUS_the_duel_monarchy }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = AUS_occupy_bosnia
+		icon = GFX_focus_YUG_safeguard_bosnia
+		x = -3
+		y = 1
+		relative_position_id = AUS_the_balkan_theatre
+		prerequisite = { focus = AUS_the_balkan_theatre }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = AUS_the_european_theatre
+		icon = GFX_focus_generic_the_council_of_europe
+		x = 5
+		y = 1
+		relative_position_id = AUS_the_duel_monarchy
+		prerequisite = { focus = AUS_the_duel_monarchy }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			
+		}
+	}
 	
 	focus = {
 		id = AUS_multiethnic_empire
 		icon = GFX_focus_generic_workers
-		x = 4
+		x = 2
 		y = 2
 		relative_position_id = AUS_setting_a_new_course
 		prerequisite = { focus = AUS_setting_a_new_course }
-		mutually_exclusive = { focus = AUS_austria_indivisible }
 		mutually_exclusive = { focus = AUS_the_ausgleich }
 		cost = 10
 		available = {
@@ -887,7 +930,7 @@
 				}
 				AUS_increse_illyrian_attitude_effect = yes
 			}
-			
+			custom_effect_tooltip = fpw_branch_incomplete_tt
 		}
 	}
 	

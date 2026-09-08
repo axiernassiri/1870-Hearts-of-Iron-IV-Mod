@@ -837,6 +837,165 @@
 			
 		}
 	}
+
+
+	focus = {
+		id = AUS_reconcile_with_germany
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -2
+		y = 1
+		mutually_exclusive = {
+			focus = AUS_defeated_powers
+		}
+		relative_position_id = AUS_the_european_theatre
+		prerequisite = { focus = AUS_the_european_theatre }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			#improves relations with the german empire
+		}
+	}
+
+	focus = {
+		id = AUS_pursue_lost_italian_ambitions
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 1
+		y = 1
+		relative_position_id = AUS_reconcile_with_germany
+		prerequisite = { focus = AUS_reconcile_with_germany }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# war goal against italy
+		}
+	}
+
+	focus = {
+		id = AUS_brothers_alliance
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -1
+		y = 1
+		relative_position_id = AUS_reconcile_with_germany
+		prerequisite = { focus = AUS_reconcile_with_germany }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# alliance with germany
+		}
+	}
+
+	focus = {
+		id = AUS_defeated_powers
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -6
+		y = 1
+		mutually_exclusive = {
+			focus = AUS_reconcile_with_germany
+		}
+		relative_position_id = AUS_the_european_theatre
+		prerequisite = { focus = AUS_the_european_theatre }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			#improves relations with the german empire
+		}
+	}
+
+	focus = {
+		id = AUS_avenge_the_bruderkrieg
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 0
+		y = 1
+		relative_position_id = AUS_defeated_powers
+		prerequisite = { focus = AUS_defeated_powers }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# war goal on germany
+		}
+	}
+
+	focus = {
+		id = AUS_austrian_dominence
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 2
+		y = 2
+		relative_position_id = AUS_defeated_powers
+		prerequisite = { focus = AUS_avenge_the_bruderkrieg focus = AUS_pursue_lost_italian_ambitions}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# depending on which focus you took you either need to take sileasia back from germany or retake venice and capture milan
+		}
+	}
+
+
+
+	focus = {
+		id = AUS_the_czech_question
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 3
+		y = 1
+		relative_position_id = AUS_the_european_theatre
+		prerequisite = { focus = AUS_the_european_theatre }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = AUS_the_fundamental_articles
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 0
+		y = 1
+		relative_position_id = AUS_the_czech_question
+		prerequisite = { focus = AUS_the_czech_question }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# fundamental articles event to accept or deny czech autonomy
+		}
+	}
+
+	focus = {
+		id = AUS_bohemian_industrialization
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -1
+		y = 1
+		relative_position_id = AUS_the_fundamental_articles
+		prerequisite = { focus = AUS_the_fundamental_articles }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# factories in bohemian states
+		}
+	}
+
+	focus = {
+		id = AUS_moravian_industrialization
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 1
+		y = 1
+		relative_position_id = AUS_the_fundamental_articles
+		prerequisite = { focus = AUS_the_fundamental_articles }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# factories in moravian states
+		}
+	}
 	
 	focus = {
 		id = AUS_multiethnic_empire
@@ -938,16 +1097,13 @@
 	focus = {
 		id = AUS_army_reforms_begin
 		icon = GFX_focus_generic_advanced_military_studies
-		x = 8
+		x = 10
 		y = 0
 		relative_position_id = AUS_great_humiliation
 		#prerequisite = { focus = AUS_peace_of_vienna }
 		cost = 10
 		available = {
-			OR = {
-				has_completed_focus = AUS_peace_of_prague
-				has_completed_focus = AUS_reform_the_army
-			}
+			has_completed_focus = AUS_common_army
 		}
 		completion_reward = {
 			army_experience = 25

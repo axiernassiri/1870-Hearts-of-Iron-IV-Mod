@@ -58,6 +58,12 @@ ideas = {
 				war_support_factor = 0.15
             }
 		}
+		fpw_idea_habsburg_horses = {
+			modifier = {
+				cavalry_attack_factor = 0.10
+				cavalry_defence_factor = 0.05
+            }
+		}
 	}
 	
 	hidden_ideas = {

@@ -382,3 +382,60 @@ country_event = {
 	}
 }
 
+
+country_event = {
+	id = fpw_austria.11
+	title = fpw_austria.11.t
+	desc = fpw_austria.11.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+
+	option = {
+		name = fpw_austria.11.a
+		ai_chance = { factor = 60 }
+		AUS = {
+			create_faction = AUS_anti_german_alliance
+		}
+		add_to_faction = AUS
+	}
+
+	option = {
+		name = fpw_austria.11.b
+		ai_chance = { factor = 40 }
+		AUS = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = medium_decrease
+			}
+		}
+	}
+}
+
+country_event = {
+	id = fpw_austria.12
+	title = fpw_austria.12.t
+	desc = fpw_austria.12.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+
+	option = {
+		name = fpw_austria.12.a
+		ai_chance = { factor = 60 }
+		AUS = {
+			create_faction = AUS_central_powers
+		}
+		add_to_faction = AUS
+	}
+
+	option = {
+		name = fpw_austria.12.b
+		ai_chance = { factor = 40 }
+		AUS = {
+			add_opinion_modifier = {
+				target = PRS
+				modifier = medium_decrease
+			}
+		}
+	}
+}
+

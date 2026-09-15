@@ -116,6 +116,7 @@
  AUS_illyria_friendly: "Friendly Illyria"
  AUS_illyria_neutral: "Neutral Illyria"
  AUS_illyria_hostile: "Hostile Illyria"
+ fpw_idea_habsburg_horses: "Habsburg Horses"
  
  
 #events
@@ -139,7 +140,20 @@
  fpw_austria.8.d: "Certain powers have met up in Berlin to discuss the future of our country for us. They have decided to divide up the balkan."
  fpw_austria.8.a: "We cannot risk a major war."
  fpw_austria.8.b: "hecks nah."
- 
+ AUS_anti_german_alliance: "Anti-[PRS.GetNameDef] Entente."
+ fpw_austria.10.t: "[AUS.GetNameDef] Demands."
+ fpw_austria.10.d: ""
+ fpw_austria.10.a: "We accept."
+ fpw_austria.10.b: "We Deny"
+ fpw_austria.11.t: "[AUS.GetNameDef] proposes Anti-German Alliance."
+ fpw_austria.11.d: ""
+ fpw_austria.11.a: "We Agree."
+ fpw_austria.11.b: "No."
+ AUS_central_powers: "Central Powers"
+ fpw_austria.12.t: "[AUS.GetNameDef] proposes a Germanic Alliance."
+ fpw_austria.12.d: ""
+ fpw_austria.12.a: "We accept"
+ fpw_austria.12.b: "No."
 #traits 
  
 #custom cost texts 

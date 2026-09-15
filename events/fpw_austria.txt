@@ -351,3 +351,34 @@ country_event = {
 	}
 }
 
+# Serbian and Bulgarian response to Austrian protectorate demands.
+country_event = {
+	id = fpw_austria.10
+	title = fpw_austria.10.t
+	desc = fpw_austria.10.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+
+	option = {
+		name = fpw_austria.10.a
+		ai_chance = { factor = 60 }
+		AUS = {
+			puppet = {
+				target = ROOT
+				end_wars = no
+			}
+		}
+	}
+
+	option = {
+		name = fpw_austria.10.b
+		ai_chance = { factor = 40 }
+		AUS = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+		}
+	}
+}
+

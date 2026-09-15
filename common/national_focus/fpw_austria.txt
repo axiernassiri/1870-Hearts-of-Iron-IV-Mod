@@ -796,7 +796,7 @@
 	focus = {
 		id = AUS_the_balkan_theatre
 		icon = GFX_focus_generic_balkan_diplomacy
-		x = -5
+		x = -6
 		y = 1
 		relative_position_id = AUS_the_duel_monarchy
 		prerequisite = { focus = AUS_the_duel_monarchy }
@@ -1029,8 +1029,7 @@
 		x = 1
 		y = 3
 		relative_position_id = AUS_war_against_the_ottomans
-		prerequisite = { focus = AUS_secure_the_sanjak }
-		prerequisite = { focus = AUS_adriatic_bulwark }
+		prerequisite = { focus = AUS_secure_the_sanjak focus = AUS_south_slav_compromise focus = AUS_adriatic_bulwark}
 		cost = 5
 		available = {
 		}
@@ -1117,7 +1116,7 @@
 	focus = {
 		id = AUS_the_european_theatre
 		icon = GFX_focus_generic_the_council_of_europe
-		x = 5
+		x = 6
 		y = 1
 		relative_position_id = AUS_the_duel_monarchy
 		prerequisite = { focus = AUS_the_duel_monarchy }
@@ -1126,39 +1125,6 @@
 		}
 		completion_reward = {
 			
-		}
-	}
-
-
-	focus = {
-		id = AUS_guardian_of_central_europe
-		icon = GFX_focus_generic_the_council_of_europe
-		x = 0
-		y = 1
-		relative_position_id = AUS_the_european_theatre
-		prerequisite = { focus = AUS_the_european_theatre }
-		cost = 5
-		available = {
-		}
-		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.05
-		}
-	}
-
-	focus = {
-		id = AUS_safeguard_the_empire
-		icon = GFX_focus_generic_support_the_left_right
-		x = 0
-		y = 1
-		relative_position_id = AUS_guardian_of_central_europe
-		prerequisite = { focus = AUS_guardian_of_central_europe }
-		cost = 5
-		available = {
-		}
-		completion_reward = {
-			add_war_support = 0.05
-			add_political_power = 25
 		}
 	}
 
@@ -1258,6 +1224,207 @@
 		}
 	}
 
+	focus = {
+		id = AUS_fragment_italy
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 3
+		y = 1
+		relative_position_id = AUS_austrian_dominence
+		prerequisite = { focus = AUS_austrian_dominence }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_pursue_lost_italian_ambitions
+		}
+		completion_reward = {
+			# This focus will shatter italy
+		}
+	}
+
+	focus = {
+		id = AUS_habsburg_cavalry
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 0
+		y = 2
+		relative_position_id = AUS_austrian_dominence
+		prerequisite = { focus = AUS_austrian_dominence }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# This focus will provide a buff to cav
+		}
+	}
+
+	focus = {
+		id = AUS_control_over_italy
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 1
+		y = 1
+		relative_position_id = AUS_fragment_italy
+		prerequisite = { focus = AUS_fragment_italy }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_pursue_lost_italian_ambitions
+		}
+		completion_reward = {
+			# This focus will shatter italy
+		}
+	}
+
+	focus = {
+		id = AUS_ancestral_homeland
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -1
+		y = 1
+		relative_position_id = AUS_fragment_italy
+		prerequisite = { focus = AUS_fragment_italy }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_pursue_lost_italian_ambitions
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = SWI
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_reinstate_the_confederation
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -3
+		y = 1
+		relative_position_id = AUS_austrian_dominence
+		prerequisite = { focus = AUS_austrian_dominence }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_avenge_the_bruderkrieg
+		}
+		completion_reward = {
+			# This focus will shatter germany
+		}
+	}
+
+	focus = {
+		id = AUS_tight_adminstration_of_sg
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -1
+		y = 1
+		relative_position_id = AUS_reinstate_the_confederation
+		prerequisite = { focus = AUS_reinstate_the_confederation }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_avenge_the_bruderkrieg
+		}
+		completion_reward = {
+			# This focus will puppet the southern states
+		}
+	}
+
+	focus = {
+		id = AUS_expand_the_confed
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 1
+		y = 1
+		relative_position_id = AUS_reinstate_the_confederation
+		prerequisite = { focus = AUS_reinstate_the_confederation }
+		cost = 5
+		available = {
+			has_completed_focus = AUS_avenge_the_bruderkrieg
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = HOL
+				type = puppet_wargoal_focus
+			}
+			create_wargoal = {
+				target = BEL
+				type = puppet_wargoal_focus
+			}
+			create_wargoal = {
+				target = DEN
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_restitutio_romae
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 3
+		y = 2
+		relative_position_id = AUS_reinstate_the_confederation
+		prerequisite = {
+			focus = AUS_expand_the_confed
+			focus = AUS_control_over_italy
+		}
+		prerequisite = { focus = AUS_habsburg_cavalry}
+		prerequisite = { focus = AUS_tight_adminstration_of_sg focus = AUS_ancestral_homeland }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			# gives idea rome restored
+			# Either restores the Holy Roman Empire or The Roman Empire
+		}
+	}
+
+	focus = {
+		id = AUS_reclaim_rome
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = -3
+		y = 1
+		relative_position_id = AUS_restitutio_romae
+		prerequisite = { focus = AUS_restitutio_romae}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = ITA
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_habsburg_sea
+		#icon = GFX_focus_generic_the_council_of_europe
+		x = 3
+		y = 1
+		relative_position_id = AUS_restitutio_romae
+		prerequisite = { focus = AUS_restitutio_romae}
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = FRA
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = SPA
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = TUR
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = SPA
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = POR
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = MOR
+				type = annex_everything
+			}
+		}
+	}
 
 
 	focus = {

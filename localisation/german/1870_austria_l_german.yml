@@ -49,6 +49,10 @@
  AUS_austria_indivisible_desc: ""
  AUS_the_ausgleich: "Der Ausgleich von [GetYear]"
  AUS_the_ausgleich_desc: ""
+ AUS_guardian_of_central_europe: "Beschützer Mitteleuropas"
+ AUS_guardian_of_central_europe_desc: ""
+ AUS_safeguard_the_empire: "Das Reich schützen"
+ AUS_safeguard_the_empire_desc: ""
  AUS_multiethnic_empire: "Multiethnisches Reich"
  AUS_multiethnic_empire_desc: "Noch eine Krone wird es retten!"
  

@@ -1131,6 +1131,38 @@
 
 
 	focus = {
+		id = AUS_guardian_of_central_europe
+		icon = GFX_focus_generic_the_council_of_europe
+		x = 0
+		y = 1
+		relative_position_id = AUS_the_european_theatre
+		prerequisite = { focus = AUS_the_european_theatre }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = AUS_safeguard_the_empire
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1
+		relative_position_id = AUS_guardian_of_central_europe
+		prerequisite = { focus = AUS_guardian_of_central_europe }
+		cost = 5
+		available = {
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 25
+		}
+	}
+
+	focus = {
 		id = AUS_reconcile_with_germany
 		#icon = GFX_focus_generic_the_council_of_europe
 		x = -2

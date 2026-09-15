@@ -100,6 +100,16 @@
  fpw_austria.6.t: "The Slavs Revolt"
  fpw_austria.6.d: ""
  fpw_austria.6.a: "It is 1848 all over again."
+ fpw_austria.9.a: ""
+ AUS_congress_of_berlin: "Congress of Berlin"
+ fpw_austria.7.t: "Congress of Berlin"
+ fpw_austria.7.d: "[AUS.GetNameDef] proposes an agreement to split up [TUR.GetNameDef] between [ENG.GetNameDef], [SOV.GetNameDef], and [AUS.GetNameDef]. Under this agreement the balkan states would gain freedom, with [SOV.GetNameDef] gaining overlordship of Romania. [ENG.GetNameDef] would gain Cyprus, and [Aus.GetNameDef] would annex Bosnia."
+ fpw_austria.7.a: "A fine plan."
+ fpw_austria.7.b: "Ridiculous!"
+ fpw_austria.8.t: "Great Powers seek concessions."
+ fpw_austria.8.d: "Certain powers have met up in Berlin to discuss the future of our country for us. They have decided to divide up the balkan."
+ fpw_austria.8.a: "We cannot risk a major war."
+ fpw_austria.8.b: "hecks nah."
  
 #traits 
  
@@ -133,7 +143,8 @@
  AUS_decrese_galician_attitude_effect_tt: "This will §Rdecrese§! the §YGalician§! attitude."
  AUS_increse_illyrian_attitude_effect_tt: "This will §Gincrese§! the §YIllyrian§! attitude."
  AUS_decrese_illyrian_attitude_effect_tt: "This will §Rdecrese§! the §YIllyrian§! attitude."
- 
+ AUS_war_with_ottomans: "This may start a war with [TUR.GetNameDef], the other powers who agreed will join your side."
+ AUS_congress_of_berlin_tt: "This will ask the other relevant powers to divide the [TUR.GetNameDef]"
 #custom modifier tooltips
  
 #scripted gui text
@@ -176,6 +187,6 @@
 #leaders
  
 #opinion modifiers
- 
+ fpw_rejected_congress_of_berlin: "Rejected Congress of Berlin"
 #cosmetic nation/ideology names
  

@@ -48,4 +48,9 @@ opinion_modifiers = {
 		trade = no
 		value = -75
 	}
+
+	fpw_rejected_congress_of_berlin = {
+		trade = no
+		value = -50
+	}
 }

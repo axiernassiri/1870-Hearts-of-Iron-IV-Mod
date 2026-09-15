@@ -809,9 +809,9 @@
 	}
 
 	focus = {
-		id = AUS_occupy_bosnia
+		id = AUS_congress_of_berlin
 		icon = GFX_focus_YUG_safeguard_bosnia
-		x = -3
+		x = 0
 		y = 1
 		relative_position_id = AUS_the_balkan_theatre
 		prerequisite = { focus = AUS_the_balkan_theatre }
@@ -819,7 +819,52 @@
 		available = {
 		}
 		completion_reward = {
-			
+			custom_effect_tooltip = AUS_congress_of_berlin_tt
+			hidden_effect = {
+				ENG = {
+					country_event = fpw_austria.7
+				}
+				SOV = { country_event = fpw_austria.7 }
+				TUR = {
+					country_event = {
+						id = fpw_austria.8
+						days = 10
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_diplomatic_victory
+		#icon = GFX_focus_YUG_safeguard_bosnia
+		x = -1
+		y = 1
+		relative_position_id = AUS_congress_of_berlin
+		prerequisite = { focus = AUS_congress_of_berlin }
+		cost = 1
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.20
+		}
+	}
+
+	focus = {
+		id = AUS_war_against_the_ottomans
+		#icon = GFX_focus_YUG_safeguard_bosnia
+		x = 1
+		y = 1
+		relative_position_id = AUS_congress_of_berlin
+		prerequisite = { focus = AUS_congress_of_berlin }
+		cost = 1
+		available = {
+			always = no
+		}
+		completion_reward = {
+			# grants military buff against ottomans
 		}
 	}
 
@@ -978,12 +1023,12 @@
 		available = {
 		}
 		completion_reward = {
-			# factories in bohemian states
+			# civ factories in bohemian states
 		}
 	}
 
 	focus = {
-		id = AUS_moravian_industrialization
+		id = AUS_moravian_arms_factories
 		#icon = GFX_focus_generic_the_council_of_europe
 		x = 1
 		y = 1
@@ -993,7 +1038,7 @@
 		available = {
 		}
 		completion_reward = {
-			# factories in moravian states
+			#  mil factories in moravian states
 		}
 	}
 	

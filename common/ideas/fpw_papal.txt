@@ -23,11 +23,132 @@ ideas = {
 				}
 			}
 			
-			picture = GFX_idea_wip
+			picture = GFX_idea_PAP_french_garrison
 			removal_cost = -1
 			
 			modifier = {
 				army_core_defence_factor = 0.5
+			}
+		}
+		PAP_economic_aid = {
+			allowed = {
+				always = yes
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = ARG_civilian_economy_boost
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+		PAP_creating_alliance = {
+			allowed = {
+				always = yes
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = received_attache
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_gain = -0.1
+				mobilization_speed	 = -0.2
+			}
+		}
+		PAP_anti-italian_pact = {
+			allowed = {
+				always = yes
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = generic_war_preparation
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = ITA
+				attack_bonus_against = 0.1
+			}
+		}
+		PAP_planting_the_seeds = {
+			allowed = {
+				always = yes
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = generic_volunteer_expedition_bonus
+			removal_cost = -1
+			
+			modifier = {
+				send_volunteer_size = 5
+				send_volunteers_tension = -1
+				experience_gain_army_unit_factor = 0.2
+			}
+		}
+		PAP_undereducated_populace = {
+			allowed = {
+				always = yes
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = GFX_idea_PAP_undereducated_populace
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = -0.05
+			}
+		}
+		PAP_catholic_traditions = {
+			allowed = {
+				original_tag = PAP
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = GFX_idea_PAP_catholic_traditions
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.15
+				political_power_gain = -0.1
+			}
+		}
+		PAP_catholic_traditions_2 = {
+			allowed = {
+				original_tag = PAP
+			}
+
+			available = {
+				always = yes
+			}
+			
+			picture = GFX_idea_PAP_catholic_traditions
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.2
+				political_power_gain = -0.15
 			}
 		}
 	}

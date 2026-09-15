@@ -412,6 +412,9 @@ on_actions = {
 					days = 1
 				}
 			}
+			PAP = {
+				country_event = news_papal.3
+			}
 		}
 	}
 

@@ -13,4 +13,20 @@ characters={
 			id=-1
 		}
 	}
+	PAP_general={
+		name="Eugène Allet"
+		portraits={
+			civilian={
+				large=GFX_portrait_PAP_pope
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
 }

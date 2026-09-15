@@ -1,0 +1,41 @@
+################
+##### PAP ######
+################
+
+PAP_diplomatic_authority_of_the_holy_see_category = {
+
+	icon = GFX_decision_category_generic
+	
+	allowed = {
+		original_tag = PAP
+	}
+
+	priority = {
+		base = 2000
+	}
+
+	visible = {
+		NOT = {
+			OR = {
+				has_completed_focus = PAP_austria
+				has_completed_focus = PAP_italian_compromise
+			}
+		}
+	}
+}
+PAP_the_papal_army_category = {
+
+	icon = GFX_decision_category_military_operation
+	
+	allowed = {
+		original_tag = PAP
+	}
+
+	priority = {
+		base = 1999
+	}
+
+	visible = {
+		always = yes
+	}
+}

@@ -43,4 +43,9 @@ opinion_modifiers = {
         	trade = no
         	value = -25
 	}
+
+	fpw_papal_doesnt_like = {
+		trade = no
+		value = -75
+	}
 }

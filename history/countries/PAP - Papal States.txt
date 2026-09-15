@@ -2,18 +2,20 @@ capital = 2
 oob = "PAP_1866"
 set_cosmetic_tag = PAP_neutrality
 recruit_character = PAP_pope
+recruit_character = PAP_general
 
 set_research_slots = 3
-set_stability = 0.5
-set_war_support = 0.5
+set_stability = 0.6
+set_war_support = 0.13
 add_ideas = {
 	french_garrison
+	PAP_undereducated_populace
+	PAP_catholic_traditions
 }
 
 
 # Starting tech
 set_technology = {
-    fpw_cavalry_equipment = 1
 	fpw_infantry_weapons = 1
 	fpw_infantry_weapons1 = 1
 	fpw_cannon_artillery = 1
@@ -28,7 +30,7 @@ if = {
 	}
 	set_technology = {
 
-}
+	}
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -40,9 +42,10 @@ if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
 
-}
+	}
 }
 
+give_military_access = FRA
 
 set_convoys = 60
 

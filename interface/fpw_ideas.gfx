@@ -310,4 +310,17 @@ spriteTypes = {
 		name = "GFX_idea_fpw_idea_austria_power_decentralized"
 		texturefile = "gfx/interface/ideas/idea_hun_hungarian_monarchy_democratic.dds"
 	}
+
+	SpriteType = {
+		name = "GFX_idea_PAP_undereducated_populace"
+		texturefile = "gfx/interface/ideas/stupid_people.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_PAP_catholic_traditions"
+		texturefile = "gfx/interface/ideas/catholicism.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_PAP_french_garrison"
+		texturefile = "gfx/interface/ideas/french_garrison.png"
+	}
 }

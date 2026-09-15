@@ -242,6 +242,10 @@ spriteTypes = {
 		name = "GFX_focus_ITA_star"
 		texturefile = "gfx/interface/goals/focus_italian_identity.dds"
 	}
+	spriteType = {
+		name = "GFX_focus_form_hre"
+		texturefile = "gfx/interface/goals/hre.png"
+	}
 }
 
 # FRANCE #

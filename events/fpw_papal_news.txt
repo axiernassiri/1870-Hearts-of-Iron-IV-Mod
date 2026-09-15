@@ -1,0 +1,104 @@
+add_namespace = news_papal
+
+news_event = {
+	id = news_papal.1
+	title = "[PAP.GetNameDefCap] Denounces Itlaian Unification!"
+	desc = news_papal.1.d
+	picture = GFX_news_event_gathering_protest
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "How will [ITA.GetNameDef] react to this?"
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = PAP
+					original_tag = ITA
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "They Need to Hear it"
+		trigger = {
+			original_tag = PAP
+		}
+	}
+
+	option = {
+		name = "How dare they!"
+		trigger = {
+			original_tag = ITA
+		}
+		add_war_support = -0.05
+		add_stability = -0.05
+		add_opinion_modifier = {
+			target = PAP
+			modifier = fpw_papal_doesnt_like
+		}
+	}
+}
+news_event = {
+	id = news_papal.2
+	title = "[PAP.GetNameDefCap] Embargoes [ITA.GetNameDef]!"
+	desc = news_papal.2.d
+	picture = GFX_news_event_gathering_protest
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "How will [ITA.GetNameDef] react to this?"
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = PAP
+					original_tag = ITA
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "They Need to Hear it"
+		trigger = {
+			original_tag = PAP
+		}
+	}
+
+	option = {
+		name = "How dare they!"
+		trigger = {
+			original_tag = ITA
+		}
+	}
+}
+news_event = {
+	id = news_papal.3
+	title = news_papal.3.t
+	desc = news_papal.3.d
+	picture = GFX_news_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "Just let me play!"
+	}
+}
+news_event = {
+	id = news_papal.4
+	title = "The Papal States Submits to Italy"
+	desc = news_papal.4.d
+	picture = GFX_news_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "Shocking."
+	}
+}

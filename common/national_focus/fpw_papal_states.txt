@@ -18,9 +18,9 @@
 		icon = GFX_focus_generic_catholic_dominion
 		mutually_exclusive = { focus = PAP_austria }
 		mutually_exclusive = { focus = PAP_italian_compromise }
-		x = 0
+		x = 8
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = { base = 10 }
 		search_filters = {  FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		
@@ -29,6 +29,365 @@
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = PAP_maintain_secular_power
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = PAP_catholic_tradition }
+		available = {
+			
+		}
+		x = 0
+		y = 1
+		relative_position_id = PAP_catholic_tradition
+		cost = 6
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = no
+
+		completion_reward = {
+			#unlocks cool decisions
+			unlock_decision_category_tooltip = PAP_diplomatic_authority_of_the_holy_see_category
+			
+		}
+	}
+	focus = {
+		id = PAP_anti-italian_policies
+		icon = GFX_focus_generic_italy_propaganda
+		prerequisite = { focus = PAP_maintain_secular_power }
+		available = {
+			
+		}
+		x = -3
+		y = 1
+		relative_position_id = PAP_maintain_secular_power
+		cost = 5
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#unlocks cool decisions
+			unlock_decision_tooltip = PAP_edict_on_unification
+			unlock_decision_tooltip = PAP_embargo_italy
+		}
+	}
+	focus = {
+		id = PAP_help_spain
+		icon = GFX_focus_generic_befriend_nationalist_spain_focus
+		prerequisite = { focus = PAP_anti-italian_policies }
+		available = {
+			
+		}
+		x = -1
+		y = 1
+		relative_position_id = PAP_anti-italian_policies
+		cost = 10
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			41 = {
+				owner = {
+					custom_effect_tooltip = PAP_convince_britain_tt
+					ai_strategy = {
+						type = support
+						id = PREV
+						value = 50
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = small_increase
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = medium_increase
+					}
+					ai_strategy = {
+						type = befriend
+						id = PREV
+						value = 100
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = PAP_disunite_italy
+		icon = GFX_focus_attack_italy
+		prerequisite = { focus = PAP_anti-italian_policies }
+		prerequisite = { focus = PAP_pro-french_policies }
+		prerequisite = { focus = PAP_enlargening_the_roman_church }
+		mutually_exclusive = { focus = PAP_pact_of_non-escalation }
+		available = {
+			strength_ratio = {
+				tag = ITA
+				ratio > 0.25
+			}
+		}
+		x = 2
+		y = 3
+		relative_position_id = PAP_anti-italian_policies
+		cost = 10
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#unlocks cool decisions
+			unlock_decision_tooltip = PAP_request_french_aid
+			unlock_decision_tooltip = PAP_disunite_italy
+		}
+	}
+	focus = {
+		id = PAP_pact_of_non-escalation
+		icon = GFX_focus_befriend_italy
+		prerequisite = { focus = PAP_anti-italian_policies }
+		prerequisite = { focus = PAP_pro-french_policies }
+		prerequisite = { focus = PAP_enlargening_the_roman_church }
+		mutually_exclusive = { focus = PAP_disunite_italy }
+		available = {
+		}
+		x = 4
+		y = 3
+		relative_position_id = PAP_anti-italian_policies
+		cost = 10
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ITA = { country_event = papal.9 }
+		}
+	}
+	focus = {
+		id = PAP_pro-french_policies
+		icon = GFX_focus_france_fist
+		prerequisite = { focus = PAP_maintain_secular_power }
+		available = {
+			
+		}
+		x = 3
+		y = 1
+		relative_position_id = PAP_maintain_secular_power
+		cost = 6
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			#unlocks cool decisions
+			unlock_decision_tooltip = PAP_request_french_aid
+			reverse_add_opinion_modifier = {
+				target = FRA
+				modifier = medium_increase
+			}
+			ai_strategy = {
+				type = alliance
+				id = FRA
+				value = -100
+			}
+		}
+	}
+	focus = {
+		id = PAP_align_france
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = PAP_pro-french_policies }
+		available = {
+			is_subject = no
+		}
+		x = 1
+		y = 1
+		relative_position_id = PAP_pro-french_policies
+		cost = 6
+		ai_will_do = { base = 10 }
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PAP_align_france_tt
+			custom_effect_tooltip = PAP_align_france_tt_3
+			FRA = {
+				ai_strategy = {
+					type = support
+					id = PAP
+					value = 200
+				}
+			}
+		}
+	}
+	focus = {
+		id = PAP_persuade_germany
+		icon = {
+			trigger = {
+				PRS = {
+					NOT = {
+						has_cosmetic_tag = GER_north_germany
+					}
+				}
+			}
+			value = GFX_focus_befriend_prussia
+		}
+		icon = {
+			trigger = {
+				PRS = {
+					has_cosmetic_tag = GER_north_germany
+				}
+			}
+			value = GFX_focus_chi_mission_to_germany
+		}
+		prerequisite = { focus = PAP_maintain_secular_power }
+		available = {
+			
+		}
+		x = -1
+		y = 1
+		relative_position_id = PAP_maintain_secular_power
+		cost = 10
+		ai_will_do = { base = 20 }
+		
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = PAP_persuade_germany_tt
+			PRS = {
+				ai_strategy = {
+					type = ignore
+					id = ITA
+					value = 1000
+				}
+				ai_strategy = {
+					type = dont_join_wars_with
+					id = ITA
+					value = 99999
+					target_country = PAP
+				}
+				add_opinion_modifier = {
+					target = PAP
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+	focus = {
+		id = PAP_convince_britain
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = PAP_maintain_secular_power }
+		available = {
+			
+		}
+		x = 1
+		y = 1
+		relative_position_id = PAP_maintain_secular_power
+		cost = 10
+		ai_will_do = { base = 10 }
+		
+		available_if_capitulated = no
+
+		completion_reward = {
+			ENG = {
+				custom_effect_tooltip = PAP_convince_britain_tt
+				ai_strategy = {
+					type = support
+					id = PAP
+					value = 100
+				}
+				add_opinion_modifier = {
+					target = PAP
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+	focus = {
+		id = PAP_seek_support_from_catholic_nations
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = PAP_convince_britain }
+		prerequisite = { focus = PAP_pro-french_policies }
+		x = 1
+		y = 2
+		relative_position_id = PAP_convince_britain
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PAP_complete_this_and_tt_2
+		}
+	}
+	focus = {
+		id = PAP_global_catholicism
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = PAP_persuade_germany }
+		prerequisite = { focus = PAP_anti-italian_policies }
+		available = {
+			has_war = no
+		}
+		x = -1
+		y = 2
+		relative_position_id = PAP_persuade_germany
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = PAP_planting_the_seeds
+		}
+	}
+	focus = {
+		id = PAP_enlargening_the_roman_church
+		icon = GFX_focus_generic_pope
+		prerequisite = { focus = PAP_persuade_germany }
+		prerequisite = { focus = PAP_convince_britain }
+		available = {
+		}
+		x = 0
+		y = 2
+		relative_position_id = PAP_maintain_secular_power
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PAP_catholic_traditions
+				add_idea = PAP_catholic_traditions_2
+			}
+		}
+	}
+	focus = {
+		id = PAP_christs_accord
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		prerequisite = { focus = PAP_disunite_italy focus = PAP_pact_of_non-escalation }
+		available = {
+			is_subject = no
+		}
+		x = 0
+		y = 5
+		relative_position_id = PAP_maintain_secular_power
+		cost = 10
+		ai_will_do = { base = 10 }
+		
+		available_if_capitulated = no
+
+		completion_reward = {
+			unlock_decision_tooltip = PAP_form_the_holy_alliance
 		}
 	}
 	focus = {
@@ -36,11 +395,17 @@
 		icon = GFX_focus_befriend_austria
 		mutually_exclusive = { focus = PAP_italian_compromise }
 		mutually_exclusive = { focus = PAP_catholic_tradition }
-		x = 3
+		x = 8
 		y = 0
 		relative_position_id = PAP_catholic_tradition
 		cost = 10
-		ai_will_do = { base = 1 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes
+			}
+		}
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		available_if_capitulated = yes
@@ -64,13 +429,25 @@
 				target = PRS
 				modifier = condemn_aggression
 			}
+			add_ai_strategy = {
+				type = alliance
+				id = AUS
+				value = 200
+			}
+			AUS = {
+				add_ai_strategy = {
+					type = alliance
+					id = PAP
+					value = 200
+				}
+			}
 		}
 	}
 	focus = {
 		id = PAP_austrian_volunteers
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = PAP_austria }
-		x = 5
+		x = 10
 		y = 1
 		relative_position_id = PAP_catholic_tradition
 		cost = 10
@@ -81,7 +458,7 @@
 		completion_reward = {
 			2 = {
 				create_unit = {
-					division = "name = \"Austrian Volunteers\" division_template = \"Holy-Division\" start_experience_factor = 0.5"
+					division = "name = \"Austrian Volunteers\" division_template = \"Zuavi Pontifici\" start_experience_factor = 0.5"
 					owner = PAP
 					count = 3
 				}
@@ -92,7 +469,7 @@
 		id = PAP_fortify_the_border
 		icon = GFX_goal_fortify_the_westwall
 		prerequisite = { focus = PAP_austria }
-		x = 1
+		x = 6
 		y = 1
 		relative_position_id = PAP_catholic_tradition
 		cost = 10
@@ -101,14 +478,17 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			2 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = {
-						all_provinces = yes
-						limit_to_border = yes
+			custom_effect_tooltip = PAP_fortify_the_border_tt
+			hidden_effect = {
+				2 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
 					}
 				}
 			}
@@ -118,6 +498,7 @@
 		id = PAP_attack_italy
 		icon = GFX_focus_attack_italy
 		prerequisite = { focus = PAP_austria }
+		will_lead_to_war_with = ITA
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ITA_austria_info
@@ -127,7 +508,7 @@
 		x = 0
 		y = 1
 		relative_position_id = PAP_austria
-		cost = 5
+		cost = 4
 		ai_will_do = { base = 1 }
 		search_filters = {  FOCUS_FILTER_ANNEXATION }
 		
@@ -142,10 +523,15 @@
 	}
 	focus = {
 		id = PAP_distance_from_france
-		icon = GFX_focus_attack_france
+		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = PAP_attack_italy }
 		available = {
 			has_war = no
+		}
+		bypass = {
+			NOT = {
+				has_idea = french_garrison
+			}
 		}
 		x = 0
 		y = 2
@@ -158,6 +544,13 @@
 
 		completion_reward = {
 			remove_ideas = french_garrison
+			FRA = {
+				diplomatic_relation = {
+					country = PAP
+					relation = guarantee
+					active = no
+				}
+			}
 			add_stability = -0.05
 		}
 	}
@@ -168,6 +561,9 @@
 		mutually_exclusive = { focus = PAP_friends_with_benefits }
 		available = {
 			
+		}
+		bypass = {
+			is_subject_of = AUS
 		}
 		x = -1
 		y = 1
@@ -190,7 +586,9 @@
 		prerequisite = { focus = PAP_distance_from_france }
 		mutually_exclusive = { focus = PAP_submit_to_austria }
 		available = {
-			
+			NOT = {
+				is_subject_of = AUS
+			}
 		}
 		x = 1
 		y = 1
@@ -207,28 +605,1096 @@
 		}
 	}
 	focus = {
-		id = PAP_italian_compromise
-		icon = GFX_focus_befriend_italy
-		mutually_exclusive = { focus = PAP_austria }
-		mutually_exclusive = { focus = PAP_catholic_tradition }
-		x = -3
-		y = 0
-		relative_position_id = PAP_catholic_tradition
+		id = PAP_holy_roman_empire
+		icon = GFX_focus_form_hre
+		prerequisite = { focus = PAP_friends_with_benefits focus = PAP_submit_to_austria }
+		available = {
+			controls_state = 2
+		}
+		x = 0
+		y = 2
+		relative_position_id = PAP_distance_from_france
 		cost = 10
-		ai_will_do = { base = 0 }
+		ai_will_do = { base = 1 }
 		search_filters = {  FOCUS_FILTER_POLITICAL }
 		
 		available_if_capitulated = yes
 
 		completion_reward = {
-			if = {
-				limit = { country_exists = ITA }
-				ITA = {
-					annex_country = {
-						target = PAP
-						transfer_troops = yes
+			set_cosmetic_tag = HRE_UNIFIED_neutrality
+			ITA = {
+				every_core_state = {
+					add_core_of = PAP
+				}
+			}
+			add_war_support = 0.1
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = PAP_betray_austria
+		icon = GFX_focus_PRS_finish_habsburgs
+		prerequisite = { focus = PAP_friends_with_benefits }
+		will_lead_to_war_with = AUS
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 200000
+			}
+		}
+		x = 2
+		y = 2
+		relative_position_id = PAP_distance_from_france
+		cost = 11
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_ANNEXATION }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			declare_war_on = {
+                target = AUS
+                type = puppet_wargoal_focus
+            }
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = PAP_from_berlin_to_rome
+		icon = {
+			trigger = {
+				PRS = {
+					NOT = {
+						has_cosmetic_tag = GER_north_germany
 					}
 				}
+			}
+			value = GFX_focus_attack_prussia
+		}
+		icon = {
+			trigger = {
+				PRS = {
+					has_cosmetic_tag = GER_north_germany
+				}
+			}
+			value = GFX_focus_attack_germany
+		}
+		prerequisite = { focus = PAP_betray_austria }
+		leads_to_war = PRS
+		available = {
+			PRS = {
+				any_neighbor_country = {
+					is_ally_with = PAP
+				}
+			}
+		}
+		x = 2
+		y = 3
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_ANNEXATION }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			declare_war_on = {
+                target = PRS
+                type = puppet_wargoal_focus
+            }
+		}
+	}
+	focus = {
+		id = PAP_ruler_of_the_germans
+		icon = GFX_focus_POL_habsburg
+		prerequisite = { focus = PAP_from_berlin_to_rome focus = PAP_spread_christianity_through_austria }
+		prerequisite = { focus = PAP_holy_roman_empire }
+		available = {
+			has_subject = PRS
+			has_subject = AUS
+		}
+		x = 0
+		y = 4
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_ANNEXATION }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_country_leader_trait = empire_builder
+		}
+	}
+	focus = {
+		id = PAP_faction
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		prerequisite = { focus = PAP_betray_austria }
+		available = {
+			PRS = {
+				any_neighbor_country = {
+					is_ally_with = PAP
+				}
+			}
+		}
+		x = 4
+		y = 3
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_ANNEXATION }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_faction = PAP_faction
+		}
+	}
+	focus = {
+		id = PAP_ask_austria_for_more_land
+		icon = GFX_focus_ETH_invite_italian_settlers
+		prerequisite = { focus = PAP_submit_to_austria focus = PAP_friends_with_benefits }
+		available = {
+			ITA = {
+				any_core_state = {
+					NOT = {
+						is_owned_by = PAP
+					}
+				}
+			}
+		}
+		bypass = {
+			ITA = {
+				all_core_state = {
+					is_owned_by = PAP
+				}
+			}
+		}
+		x = -2
+		y = 2
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_ANNEXATION }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			AUS = {
+				country_event = papal.1
+			}
+		}
+	}
+	focus = {
+		id = PAP_austrian_economic_advisors
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = PAP_ask_austria_for_more_land }
+		available = {
+			
+		}
+		bypass = {
+			
+		}
+		x = -4
+		y = 3
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = PAP_economic_aid
+		}
+	}
+	focus = {
+		id = PAP_spread_christianity_through_austria
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = PAP_ask_austria_for_more_land }
+		available = {
+			
+		}
+		bypass = {
+			
+		}
+		x = -2
+		y = 3
+		relative_position_id = PAP_distance_from_france
+		cost = 5
+		ai_will_do = { base = 1 }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_faction = PAP_faction
+		}
+	}
+	focus = {
+		id = PAP_italian_compromise
+		icon = GFX_focus_befriend_italy
+		mutually_exclusive = { focus = PAP_austria }
+		mutually_exclusive = { focus = PAP_catholic_tradition }
+		x = 1
+		y = 0
+		cost = 10
+		ai_will_do = {
+			base = 0
+			modifier = {
+				factor = 1
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		available = {
+			country_exists = ITA
+		}
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			hidden_effect = {
+				every_country = {
+					country_event = news_papal.4
+				}
+			}
+			ITA = {
+				annex_country = {
+					target = PAP
+					transfer_troops = yes
+				}
+				country_event = papal.2
+			}
+			custom_effect_tooltip = game_will_end_tt
+		}
+	}
+	#############################
+	##GENERIC CONSTRUCTION TREE##
+	#############################
+	focus = {
+		id = PAP_industrial_effort
+		icon = GFX_focus_BEL_christian_corporatism
+		x = 26
+		y = 0
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+				OR = { 
+					# we dont want chinese minors to go crazy on slots early since they get eaten
+					tag = GXC 
+					tag = YUN
+					tag = SHX
+					tag = XSM
+					tag = BEL
+					tag = LUX
+					tag = HOL
+					tag = DEN
+
+					# we also dont want tiny nations to go crazy with slots right away
+					num_of_controlled_states < 2
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = PAP_industrial_effort }
+		x = -1
+		y = 1
+		relative_position_id = PAP_industrial_effort
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = PAP_construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = PAP_industrial_effort }
+		x = 1
+		y = 1
+		relative_position_id = PAP_industrial_effort
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = PAP_construction_effort }
+		x = 0
+		y = 1
+		relative_position_id = PAP_construction_effort
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = PAP_construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = PAP_production_effort }
+		x = 0
+		y = 1
+		relative_position_id = PAP_production_effort
+		cost = 10
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = PAP_construction_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = PAP_construction_effort_2
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = PAP_production_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = PAP_production_effort_2
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = PAP_production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = PAP_infrastructure_effort }
+		x = -1
+		y = 1
+		relative_position_id = PAP_infrastructure_effort
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = PAP_infrastructure_effort }
+		x = 1
+		y = 1
+		relative_position_id = PAP_infrastructure_effort
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY  }
+		
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = PAP_construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PAP_extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = PAP_infrastructure_effort_2 focus = PAP_construction_effort_3 }
+		x = 1
+		y = 1
+		relative_position_id = PAP_infrastructure_effort_2
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = PAP_undereducated_populace
+		}
+	}
+	
+	focus = {
+		id = PAP_extra_tech_slot_2
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = PAP_extra_tech_slot }
+		available = {
+			num_of_factories > 10
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 0
+		y = 1
+		relative_position_id = PAP_extra_tech_slot
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = PAP_the_papal_army
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		#prerequisite = { focus = PAP_extra_tech_slot }
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 8
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 17
+		y = 8
+		#relative_position_id = PAP_extra_tech_slot
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_ARMY_XP } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+	focus = {
+		id = PAP_maintain_reliance_on_foreign_support
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		prerequisite = { focus = PAP_the_papal_army }
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 1
+		y = 1
+		relative_position_id = PAP_the_papal_army
+		mutually_exclusive = { focus = PAP_cut_the_zouaves }
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			unlock_decision_tooltip = PAP_seek_international_volunteers
+		}
+	}
+	focus = {
+		id = PAP_international_collaberation
+		icon = GFX_focus_ETH_peacekeeping_forces
+		prerequisite = { focus = PAP_maintain_reliance_on_foreign_support }
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 0
+		y = 1
+		relative_position_id = PAP_maintain_reliance_on_foreign_support
+		cost = 6
+
+		search_filters = { FOCUS_FILTER_ARMY_XP } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			custom_effect_tooltip = PAP_complete_this_and_tt
+		}
+	}
+	focus = {
+		id = PAP_cut_the_zouaves
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = PAP_the_papal_army }
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 0
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = -1
+		y = 1
+		relative_position_id = PAP_the_papal_army
+		mutually_exclusive = { focus = PAP_maintain_reliance_on_foreign_support }
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP } 
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			delete_unit_template_and_units = {
+				division_template = "Zuavi Pontifici"
+				disband = yes #will refund equipment and manpower
 			}
 		}
 	}

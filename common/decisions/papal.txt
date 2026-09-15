@@ -1,0 +1,360 @@
+
+PAP_diplomatic_authority_of_the_holy_see_category = {
+	PAP_form_the_holy_alliance = {
+		priority = 100
+		
+		icon = GFX_decision_eng_support_imperialist_coup
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_christs_accord
+			is_in_faction = no
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+		
+		cost = 100
+
+		complete_effect = {
+			add_ideas = PAP_creating_alliance
+		}
+
+		remove_effect = {
+			remove_ideas = PAP_creating_alliance
+			create_faction = PAP_faction
+			every_country = {
+				limit = {
+					is_catholic = yes
+				}
+				country_event = papal.3
+			}
+		}
+	}
+	PAP_edict_on_unification = {
+		priority = 4
+		
+		icon = GFX_decision_generic_nationalism
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_anti-italian_policies
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+		
+		cost = 10
+
+		complete_effect = {
+			add_opinion_modifier = {
+				target = ITA
+				modifier = condemn_aggression
+			}
+		}
+
+		remove_effect = {
+			every_country = {
+				news_event = {
+					id = news_papal.1
+					days = 0
+					random_hours = 12
+					random_days = 1
+				}
+			}
+		}
+	}
+	PAP_embargo_italy = {
+		priority = 3
+		
+		icon = GFX_decision_generic_civil_support
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_anti-italian_policies
+		}
+
+		#days_remove = 10
+		fire_only_once = yes
+		
+		cost = 50
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				send_embargo = ITA
+			}
+			else = {
+				add_opinion_modifier = {
+					target = ITA
+					modifier = embargo
+				}
+			}
+			every_country = {
+				news_event = {
+					id = news_papal.2
+					days = 0
+					random_hours = 12
+					random_days = 1
+				}
+			}
+		}
+	}
+	PAP_anti-italian_alliance = {
+		priority = 5
+		
+		icon = GFX_decision_eng_support_imperialist_coup
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_anti-italian_policies
+			is_in_faction = no
+		}
+
+		days_remove = 20
+		fire_only_once = yes
+		
+		cost = 100
+
+		complete_effect = {
+			add_ideas = PAP_creating_alliance
+		}
+
+		remove_effect = {
+			remove_ideas = PAP_creating_alliance
+			every_country = {
+				limit = {
+					anti_italian = yes
+				}
+				country_event = papal.6
+			}
+			custom_effect_tooltip = PAP_align_france_tt_2
+		}
+	}
+	PAP_disunite_italy = {
+		priority = 6
+		
+		icon = GFX_decision_generic_operation
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_disunite_italy
+		}
+
+		days_remove = 20
+		fire_only_once = yes
+		
+		cost = 150
+
+		complete_effect = {
+			hidden_effect = {
+				ITA = {
+					ai_strategy = {
+						type = prepare_for_war
+						id = PAP
+						value = 100
+					}
+				}
+				ai_strategy = {
+					type = prepare_for_war
+					id = ITA
+					value = 300
+				}
+			}
+			custom_effect_tooltip = "Both sides will prepare for war."
+		}
+
+		remove_effect = {
+			declare_war_on = {
+                target = ITA
+                type = annex_everything
+            }
+		}
+	}
+	PAP_request_french_aid = {
+		priority = 6
+		
+		icon = GFX_decision_generic_prepare_civil_war
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			has_completed_focus = PAP_pro-french_policies
+			OR = {
+				has_war_with = ITA
+				focus_progress = {
+					focus = PAP_disunite_italy
+					progress > 0
+				}
+			}
+		}
+
+		days_remove = 100
+		fire_only_once = no
+		
+		cost = 25
+
+		complete_effect = {
+			FRA = {
+				country_event = {
+					id = papal.12
+					days = 1
+					random_hours = 12
+					random_days = 10
+				}
+			}
+		}
+	}
+}
+
+PAP_the_papal_army_category = {
+	PAP_seek_international_volunteers = {
+		priority = 100
+		
+		icon = GFX_decision_generic_prepare_civil_war
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			NOT = {
+				has_war_with = FRA
+			}
+			has_completed_focus = PAP_maintain_reliance_on_foreign_support
+			has_manpower > 6000
+		}
+
+		days_remove = 150
+		fire_only_once = no
+		
+		cost = 50
+
+		complete_effect = {
+			random_state = {
+				limit = {
+					OR = {
+						is_owned_by = SWI
+						is_owned_by = FRA
+						is_owned_by = BEL
+						is_owned_by = HOL
+					}
+					is_on_continent = europe
+				}
+				create_unit = {
+					division = "name = \"Papal Zouaves\" division_template = \"Zuavi Pontifici\" start_experience_factor = 0.2" start_manpower_factor = 0 start_equipment_factor = 0.1
+					owner = PAP
+					count = 1
+					allow_spawning_on_enemy_provs = yes
+					country_score = {
+						base = 1
+						modifier = {
+							factor = 5
+							OR = {
+								tag = SWI
+								tag = FRA
+								tag = BEL
+								tsg = HOL
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	PAP_reach_out_to_catholic_nations = {
+		priority = 99
+		
+		icon = GFX_decision_generic_prepare_civil_war
+
+		allowed = {
+			original_tag = PAP
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			NOT = {
+				has_war_with = FRA
+			}
+			has_completed_focus = PAP_international_collaberation
+			has_completed_focus = PAP_seek_support_from_catholic_nations
+		}
+
+		days_remove = 60
+		fire_only_once = no
+		
+		cost = 50
+		
+		complete_effect = {
+			set_variable = {
+				var = PAP_manpower
+				value = 0
+			}
+			every_country = {
+				limit = {
+					is_catholic = yes
+				}
+				country_event = papal.16
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = PAP_foreign_manpower_tt
+			add_manpower = var:PAP_manpower
+			set_variable = {
+				var = PAP_manpower
+				value = 0
+			}
+		}
+	}
+}

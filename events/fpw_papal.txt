@@ -1,0 +1,375 @@
+﻿###########################
+# Italian Events
+###########################
+
+add_namespace = papal
+
+country_event = {
+	id = papal.1
+	title = "[PAP.GetNameDefCap] Requests More Land"
+	desc = papal.1.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Give them Italy"
+		ITA = {
+			every_core_state = {
+				transfer_state_to = PAP
+			}
+		}
+	}
+	option = {
+		name = "Not gonna happen"
+		PAP = { 
+			add_opinion_modifier = {
+				target = AUS
+				modifier = refused_help
+			}
+			country_event = papal.2
+		}
+	}
+}
+country_event = {
+	id = papal.2
+	title = "The Pope Submits"
+	desc = papal.2.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent!"
+		ITA = {
+			annex_country = {
+				target = PAP
+				transfer_troops = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = papal.3
+	title = "Meeting in Rome"
+	desc = papal.3.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We Will Join"
+		ai_chance = {
+			base = 1
+		}
+		PAP = {
+			country_event = {
+				id = papal.4
+				days = 1
+				random_hours = 12
+				random_days = 10
+			}
+		}
+	}
+	option = {
+		name = "No"
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 999
+				is_in_faction = yes
+			}
+		}
+		PAP = {
+			country_event = {
+				id = papal.5
+				days = 1
+				random_hours = 12
+				random_days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = papal.4
+	title = "[FROM.GetNameDefCap] Accepts"
+	desc = papal.4.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Great!"
+		add_to_faction = FROM
+	}
+}
+country_event = {
+	id = papal.5
+	title = "[FROM.GetNameDefCap] Declines"
+	desc = papal.5.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Their Loss"
+	}
+}
+country_event = {
+	id = papal.6
+	title = "Anti-[ITA.GetAdjectiveCap] Alliance"
+	desc = papal.6.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We Will Join"
+		PAP = {
+			country_event = {
+				id = papal.7
+				days = 1
+				random_hours = 12
+				random_days = 3
+			}
+		}
+	}
+	option = {
+		name = "No"
+		PAP = {
+			country_event = {
+				id = papal.8
+				days = 1
+				random_hours = 12
+				random_days = 3
+			}
+		}
+	}
+}
+country_event = {
+	id = papal.7
+	title = "[FROM.GetNameDefCap] Accepts"
+	desc = papal.4.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Great!"
+		FROM = {
+			add_ideas = PAP_anti-italian_pact
+		}
+	}
+}
+country_event = {
+	id = papal.8
+	title = "[FROM.GetNameDefCap] Declines"
+	desc = papal.5.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Darn"
+	}
+}
+country_event = {
+	id = papal.9
+	title = "[PAP.GetNameDefCap] Proposes a Treaty of Non-Escalation"
+	desc = papal.9.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Alright"
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = PAP
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		PAP = {
+			country_event = {
+				id = papal.10
+				days = 1
+				random_hours = 12
+				random_days = 3
+			}
+		}
+	}
+	option = {
+		name = "No"
+		PAP = {
+			country_event = {
+				id = papal.11
+				days = 1
+				random_hours = 12
+				random_days = 3
+			}
+			add_opinion_modifier = {
+				target = PAP
+				modifier = fpw_papal_doesnt_like
+			}
+		}
+	}
+}
+country_event = {
+	id = papal.10
+	title = "[FROM.GetNameDefCap] Accepts"
+	desc = papal.10.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent!"
+		diplomatic_relation = {
+			country = ITA
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+country_event = {
+	id = papal.11
+	title = "[FROM.GetNameDefCap] Declines!"
+	desc = papal.11.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Now we Realize [FROM.GetNameDef]'s True Intentions..."
+		add_opinion_modifier = {
+			target = FROM
+			modifier = fpw_papal_doesnt_like
+		}
+	}
+}
+country_event = {
+	id = papal.12
+	title = "[PAP.GetLeader] asks for weapons shipment"
+	desc = papal.12.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We will deliver Infantry Equipment."
+		reverse_add_opinion_modifier = {
+			target = PAP
+			modifier = offered_support
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -100
+			producer = FRA
+		}
+		PAP = {
+			country_event = {
+				id = papal.13
+				days = 3
+				random_hours = 12
+				random_days = 10
+			}
+		}
+	}
+	option = {
+		name = "We will deliver Support Equipment."
+		reverse_add_opinion_modifier = {
+			target = PAP
+			modifier = offered_support
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = -100
+			producer = FRA
+		}
+		PAP = {
+			country_event = {
+				id = papal.14
+				days = 3
+				random_hours = 12
+				random_days = 10
+			}
+		}
+	}
+	option = {
+		name = "We will deliver Cavalry Equipment."
+		reverse_add_opinion_modifier = {
+			target = PAP
+			modifier = offered_support
+		}
+		add_equipment_to_stockpile = {
+			type = cavalry_equipment
+			amount = -100
+			producer = FRA
+		}
+		PAP = {
+			country_event = {
+				id = papal.15
+				days = 3
+				random_hours = 12
+				random_days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = papal.13
+	title = "[FROM.GetNameDefCap] Gives us Infantry Equipment"
+	desc = papal.13.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent!"
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 100
+			producer = FRA
+		}
+	}
+}
+country_event = {
+	id = papal.14
+	title = "[FROM.GetNameDefCap] Gives us Infantry Equipment"
+	desc = papal.13.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent!"
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 100
+			producer = FRA
+		}
+	}
+}
+country_event = {
+	id = papal.15
+	title = "[FROM.GetNameDefCap] Gives us Infantry Equipment"
+	desc = papal.13.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Excellent!"
+		add_equipment_to_stockpile = {
+			type = cavalry_equipment
+			amount = 100
+			producer = FRA
+		}
+	}
+}
+country_event = {
+	id = papal.16
+	title = "Papal States is Recruiting Foreign Manpower"
+	desc = papal.16.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Yes"
+		add_manpower = -75
+		add_to_variable = {
+			var = PAP_manpower
+			value = 75
+			tooltip = "Papal States will recieve 75 manpower from you."
+		}
+	}
+	option = {
+		name = "No"
+	}
+}

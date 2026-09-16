@@ -1,0 +1,26 @@
+on_actions = {
+	on_daily_AUS = {
+		effect = {
+			if = {
+				limit = {
+					has_completed_focus = AUS_avenge_the_bruderkrieg
+					controls_state = 68
+					has_war_with = PRS
+				}
+				country_event = fpw_austria.13
+			}
+		}
+	}
+	on_daily_AUS = {
+		effect = {
+			if = {
+				limit = {
+					has_completed_focus = AUS_pursue_lost_italian_ambitions
+					controls_state = 2
+					has_war_with = ITA
+				}
+				country_event = fpw_austria.14
+			}
+		}
+	}
+}

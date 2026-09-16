@@ -1747,6 +1747,78 @@
 			add_ideas = fpw_modernized_military_command
 		}
 	}
+
+	focus = {
+		id = AUS_modernize_military_equipment
+		#icon = GFX_focus_generic_advanced_military_studies
+		x = -1
+		y = 1
+		relative_position_id = AUS_modernize_military_command
+		prerequisite = { focus = AUS_apline_warefare }
+		prerequisite = { focus =  AUS_modernize_military_command }
+		cost = 10
+		available = {
+		}
+		completion_reward = {
+			## this focus will counteract the outdated military spirit
+			custom_effect_tooltip = AUS_modernize_mil_tt
+			add_to_variable = {
+				var = aus_breakthru_dm
+				value = 0.10
+			}
+			add_to_variable = {
+				var = aus_morale_dm
+				value = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_for_the_emporer
+		#icon = GFX_focus_generic_advanced_military_studies
+		x = -1
+		y = 1
+		relative_position_id = AUS_modernize_military_command
+		prerequisite = { focus = AUS_apline_warefare }
+		prerequisite = { focus =  AUS_modernize_military_command }
+		cost = 10
+		available = {
+		}
+		completion_reward = {
+			## this focus will counteract the outdated military spirit
+			custom_effect_tooltip = AUS_modernize_mil_tt
+			add_war_support = 0.15
+			add_to_variable = {
+				var = aus_org_dm
+				value = 0.10
+			}
+			add_to_variable = {
+				var = aus_morale_dm
+				value = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_apline_warefare
+		#icon = GFX_focus_generic_advanced_military_studies
+		x = -1
+		y = 1
+		relative_position_id = AUS_army_reforms_begin
+		prerequisite = { focus =  AUS_army_reforms_begin }
+		cost = 10
+		available = {
+		}
+		completion_reward = {
+			## this focus will counteract the outdated military spirit
+			custom_effect_tooltip = AUS_modernize_mil_tt
+			add_to_variable = {
+				var = aus_def_dm
+				value = 0.05
+			}
+			add_ideas = fpw_modernized_military_command
+		}
+	}
 	
 	
 }	

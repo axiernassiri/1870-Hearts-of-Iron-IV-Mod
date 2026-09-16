@@ -1,0 +1,10 @@
+fpw_outdated_military = {
+	icon = GFX_idea_generic_army_problems
+	enable = { always = yes }
+
+	breakthrough_factor = aus_breakthru_dm#-0.2
+	army_morale_factor = aus_morale_dm#-0.15
+	army_org_factor = aus_org_dm#-0.15
+	army_attack_factor = aus_atk_dm#-0.2
+	army_defence_factor = aus_def_dm#-0.1
+}

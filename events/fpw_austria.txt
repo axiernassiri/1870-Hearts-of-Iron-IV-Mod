@@ -452,9 +452,18 @@ country_event = {
 	option = {
 		name = fpw_austria.13.a
 		ai_chance = { factor = 400 }
-		762 = { transfer_state_to = AUS }
-		67 = { transfer_state_to = AUS }
-		66 = { transfer_state_to = AUS }
+		762 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		67 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+	    }
+		66 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
 		white_peace = PRS
 	}
 	
@@ -479,9 +488,18 @@ country_event = {
 	option = {
 		name = fpw_austria.14.a
 		ai_chance = { factor = 400 }
-		160 = { transfer_state_to = AUS }
-		159 = { transfer_state_to = AUS }
-		161 = { transfer_state_to = AUS }
+		160 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		159 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		161 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
 		white_peace = PRS
 	}
 	

@@ -64,6 +64,15 @@ ideas = {
 				cavalry_defence_factor = 0.05
             }
 		}
+
+		fpw_modernized_military_command = {
+			modifier = {
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1 
+				army_leader_start_logistics_level = 1 
+				army_leader_start_planning_level = 1 
+            }
+		}
 	}
 	
 	hidden_ideas = {

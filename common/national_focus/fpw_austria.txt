@@ -1263,6 +1263,7 @@
 			}
 		}
 		completion_reward = {
+			add_ideas = fpw_austria_reigns_supreme
 			# depending on which focus you took you either need to take sileasia back from germany or retake venice and capture milan
 		}
 	}

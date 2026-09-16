@@ -7,7 +7,6 @@
 		modifier = {
 			add = 100
 			original_tag = AUS
-			is_debug = yes
 		}
 	}
 

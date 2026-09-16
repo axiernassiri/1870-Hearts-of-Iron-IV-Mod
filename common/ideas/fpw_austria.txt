@@ -64,6 +64,24 @@ ideas = {
 				cavalry_defence_factor = 0.05
             }
 		}
+
+		fpw_modernized_military_command = {
+			modifier = {
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1 
+				army_leader_start_logistics_level = 1 
+				army_leader_start_planning_level = 1 
+            }
+		}
+		fpw_alpine_warfare = {
+			modifier = {
+				terrain_penalty_reduction = 0.25 
+            }
+		}
+		fpw_austria_reigns_supreme = {
+			army_core_attack_factor = 0.05
+			army_core_defence_factor = 0.05
+		}
 	}
 	
 	hidden_ideas = {

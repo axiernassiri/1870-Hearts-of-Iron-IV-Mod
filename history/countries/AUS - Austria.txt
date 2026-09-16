@@ -120,6 +120,27 @@ recruit_character = AUS_henikstein
 recruit_character = AUS_krismanic
 recruit_character = AUS_archduke_albrecht
 
+add_to_variable = {
+	var = aus_breakthru_dm
+	value = -0.2
+}
+add_to_variable = {
+	var = aus_morale_dm
+	value = -0.15
+}
+add_to_variable = {
+	var = aus_org_dm
+	value = -0.15
+}
+add_to_variable = {
+	var = aus_atk_dm
+	value = -0.2
+}
+add_to_variable = {
+	var = aus_def_dm
+	value = -0.1
+}
+
 set_stability = 0.65
 set_war_support = 0.30
 set_politics = {

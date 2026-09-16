@@ -382,7 +382,7 @@ country_event = {
 	}
 }
 
-
+## faction with france
 country_event = {
 	id = fpw_austria.11
 	title = fpw_austria.11.t
@@ -411,6 +411,7 @@ country_event = {
 	}
 }
 
+## faction with germany
 country_event = {
 	id = fpw_austria.12
 	title = fpw_austria.12.t
@@ -436,6 +437,78 @@ country_event = {
 				modifier = medium_decrease
 			}
 		}
+	}
+}
+
+## event to austria for german cap
+country_event = {
+	id = fpw_austria.13
+	title = fpw_austria.13.t
+	desc = fpw_austria.13.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+
+	## scripted peace
+	option = {
+		name = fpw_austria.13.a
+		ai_chance = { factor = 400 }
+		762 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		67 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+	    }
+		66 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		white_peace = PRS
+	}
+	
+
+	## fight till end ( could get colition)
+	option = {
+		name = fpw_austria.13.b
+		ai_chance = { factor = 40 }
+		## ill make some temporary negitive modifier later or somthin
+	}
+}
+
+## event for italian cap
+country_event = {
+	id = fpw_austria.14
+	title = fpw_austria.14.t
+	desc = fpw_austria.14.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+
+	## scripted peace
+	option = {
+		name = fpw_austria.14.a
+		ai_chance = { factor = 400 }
+		160 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		159 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		161 = { 
+			add_core_of = AUS
+			transfer_state_to = AUS 
+		}
+		white_peace = PRS
+	}
+	
+
+	## fight till end ( could get colition)
+	option = {
+		name = fpw_austria.14.b
+		ai_chance = { factor = 40 }
+		## ill make some temporary negitive modifier later or somthin
 	}
 }
 

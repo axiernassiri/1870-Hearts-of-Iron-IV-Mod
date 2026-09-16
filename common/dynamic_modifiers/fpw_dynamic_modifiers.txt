@@ -43,14 +43,3 @@ fpw_underdeveloped_industry = {
 
 	custom_modifier_tooltip = prestige_modifier_underdeveloped_country
 }
-
-fpw_outdated_military = {
-	icon = GFX_idea_generic_army_problems
-	enable = { always = yes }
-
-	breakthrough_factor = -0.2
-	army_morale_factor = -0.15
-	army_org_factor = -0.15
-	army_attack_factor = -0.2
-	army_defence_factor = -0.1
-}

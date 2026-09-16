@@ -360,7 +360,7 @@ country_event = {
 	option = {
 		name = prussia_fpw.7.a
 		FRK = { country_event = { id = prussia_fpw.19 hours = 2 } }
-		complete_national_focus = AUS_focus_holstein_crisis
+		complete_national_focus = AUS_holstein_crisis
 	}
 }
 
